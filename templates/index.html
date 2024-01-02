@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang=id>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prediksi Temperatur</title>
+  <link rel="stylesheet" href="templates/styles/style.css">
+</head>
+  
+
+<body>
+  <header>
+    <h1>Prediksi Temperatur</h1>
+  </header>
+    <div class="Login">
+        <div class="form-container">
+            <form action="{{ url_for('predict')}}"method="post">
+                <div class="form-group">
+                    <label for="VPmax (mbar)">VPmax (mbar):</label>
+                    <input type="text" id="VPmax (mbar)" name="VPmax (mbar)" required>
+                </div>
+                <div class="form-group">
+                    <label for="H2OC (mmol/mol)">H2OC (mmol/mol)</label>
+                    <input type="text" id="H2OC (mmol/mol)" name="H2OC (mmol/mol)" required>
+                </div>
+                <div class="form-group">
+                    <label for="rho (g/m**3)">rho (g/m3)</label>
+                    <input type="text" id="rho (g/m**3)" name="rho (g/m**3)" required>
+                </div>
+        
+                <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+            </form>
+        </div>    
+    </div>
+    <h2>{{prediction_text}} DegC</h2>
+  <footer>
+    <h4>Belajar Membuat Front-End Web Prediksi untuk Pemula &#169; 2024, Ikhsan Mustaqim</h4>
+  </footer>
+
+</body>
+</html>  
